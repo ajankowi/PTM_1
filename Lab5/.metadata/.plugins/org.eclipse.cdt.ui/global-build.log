@@ -1,0 +1,2997 @@
+13:12:50 **** Clean-only build of configuration Release for project PTM-Lab1.4 ****
+make clean 
+rm -rf  LB1.3.hex  ./main.o  LB1.3.eep  sizedummy  LB1.3.lss  ./main.d  LB1.3.elf
+ 
+13:12:51 **** Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../HD44780.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HD44780.d" -MT"HD44780.o" -c -o "HD44780.o" "../HD44780.c"
+Finished building: ../HD44780.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     408 bytes (1.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:02:28 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:89: warning: unused variable 'a'
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     488 bytes (1.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:04:38 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF".metadata/.plugins/org.eclipse.cdt.make.core/specs.d" -MT".metadata/.plugins/org.eclipse.cdt.make.core/specs.o" -c -o ".metadata/.plugins/org.eclipse.cdt.make.core/specs.o" "../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c"
+Finished building: ../.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'ADC_10bit':
+../main.c:83: error: redefinition of 'a'
+../main.c:74: error: previous definition of 'a' was here
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+23:04:50 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     510 bytes (1.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:04:56 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     510 bytes (1.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:06:31 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     530 bytes (1.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:06:49 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     534 bytes (1.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:13:57 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     534 bytes (1.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:14:28 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     534 bytes (1.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:15:33 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     534 bytes (1.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:15:35 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     534 bytes (1.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:15:55 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     534 bytes (1.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:15:56 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     534 bytes (1.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:16:40 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     534 bytes (1.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:20:51 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     514 bytes (1.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:21:34 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     514 bytes (1.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:23:53 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:104: error: expected expression before ')' token
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+23:24:01 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     528 bytes (1.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+23:25:00 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     504 bytes (1.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:18:43 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:124: error: too few arguments to function 'ADC_10bit'
+../main.c:127: warning: format '%d' expects type 'int', but argument 3 has type 'uint32_t'
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:22:57 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'ADC_measure':
+../main.c:102: error: 'x' undeclared (first use in this function)
+../main.c:102: error: (Each undeclared identifier is reported only once
+../main.c:102: error: for each function it appears in.)
+../main.c: In function 'main':
+../main.c:124: error: too few arguments to function 'ADC_10bit'
+../main.c:127: warning: format '%d' expects type 'int', but argument 3 has type 'uint32_t'
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:23:10 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:127: warning: format '%d' expects type 'int', but argument 3 has type 'uint32_t'
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2258 bytes (6.9% Full)
+(.text + .data + .bootloader)
+
+Data:         12 bytes (0.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:23:56 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:127: warning: format '%u' expects type 'unsigned int', but argument 3 has type 'uint32_t'
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2258 bytes (6.9% Full)
+(.text + .data + .bootloader)
+
+Data:         12 bytes (0.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:26:44 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:127: warning: format '%zu' expects type 'size_t', but argument 3 has type 'uint32_t'
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2258 bytes (6.9% Full)
+(.text + .data + .bootloader)
+
+Data:         12 bytes (0.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:27:14 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:127: warning: format '%i' expects type 'int', but argument 3 has type 'uint32_t'
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2258 bytes (6.9% Full)
+(.text + .data + .bootloader)
+
+Data:         12 bytes (0.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:29:24 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2260 bytes (6.9% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (0.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:34:12 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2254 bytes (6.9% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (0.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:36:31 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2262 bytes (6.9% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (0.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:38:49 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2262 bytes (6.9% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (0.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:41:26 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2322 bytes (7.1% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (0.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:44:16 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2426 bytes (7.4% Full)
+(.text + .data + .bootloader)
+
+Data:         22 bytes (1.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:48:23 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o:(.init9+0x0): undefined reference to `main'
+make: *** [PTM-Lab1.4.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:49:20 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:229: warning: format '%d' expects type 'int', but argument 3 has type 'uint32_t'
+../main.c:245: warning: format '%d' expects type 'int', but argument 3 has type 'uint32_t'
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2540 bytes (7.8% Full)
+(.text + .data + .bootloader)
+
+Data:         28 bytes (1.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:49:34 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2546 bytes (7.8% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:22:56 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2546 bytes (7.8% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:22:56 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2546 bytes (7.8% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:24:49 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:216: warning: unused variable 'i'
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2534 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:24:59 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2534 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:25:21 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2520 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:25:49 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2520 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:26:40 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2500 bytes (7.6% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:32:15 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2520 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:34:03 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2520 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:35:29 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2514 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:35:48 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2514 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:37:54 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2520 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:39:21 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2530 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:39:39 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2530 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:40:21 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2534 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:40:50 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2530 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:41:13 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2530 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:41:37 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2534 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:41:49 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2542 bytes (7.8% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:42:17 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2536 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:42:31 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2564 bytes (7.8% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:43:15 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:219: warning: unused variable 'text1'
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2452 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:44:40 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2532 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:44:58 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2532 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:45:14 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2526 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:45:29 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2516 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:46:03 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2504 bytes (7.6% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:46:35 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2518 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:47:00 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2518 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:47:21 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2518 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:         34 bytes (1.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:56:54 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2454 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:         20 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:57:14 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2452 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:57:28 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2452 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:57:46 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2452 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:57:52 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2452 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:58:09 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2452 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:58:34 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2452 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:59:12 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2466 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:59:35 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2452 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:00:02 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2452 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:05:12 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2452 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:05:43 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2452 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+09:58:37 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2452 bytes (7.5% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+10:03:04 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2560 bytes (7.8% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (1.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+10:03:48 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2546 bytes (7.8% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (1.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+10:12:07 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2546 bytes (7.8% Full)
+(.text + .data + .bootloader)
+
+Data:         24 bytes (1.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+12:38:36 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2440 bytes (7.4% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:39:03 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2440 bytes (7.4% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:39:22 **** Incremental Build of configuration Release for project PTM-Lab1.4 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: PTM-Lab1.4.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PTM-Lab1.4.map -mmcu=atmega32 -o "PTM-Lab1.4.elf"  ./.metadata/.plugins/org.eclipse.cdt.make.core/specs.o  ./HD44780.o ./main.o   
+Finished building target: PTM-Lab1.4.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PTM-Lab1.4.elf  >"PTM-Lab1.4.lss"
+Finished building: PTM-Lab1.4.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.hex"
+Finished building: PTM-Lab1.4.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex PTM-Lab1.4.elf  "PTM-Lab1.4.eep"
+Finished building: PTM-Lab1.4.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PTM-Lab1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2440 bytes (7.4% Full)
+(.text + .data + .bootloader)
+
+Data:         18 bytes (0.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

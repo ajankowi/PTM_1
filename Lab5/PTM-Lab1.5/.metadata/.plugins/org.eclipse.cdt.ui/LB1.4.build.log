@@ -1,0 +1,20 @@
+13:12:08 **** Build of configuration Release for project LB1.4 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LB1.4.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5768 bytes (17.6% Full)
+(.text + .data + .bootloader)
+
+Data:        238 bytes (11.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+13:12:09 Build Finished. 0 errors, 0 warnings. (took 841ms)
+

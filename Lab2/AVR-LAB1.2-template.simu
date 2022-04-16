@@ -1,0 +1,24 @@
+<circuit speed="1000000" noLinAcc="5" type="simulide_0.4" animate="0" reactStep="50">
+ 
+atmega32-5: 
+<item itemtype="AVR" Init_gdb="false" labelrot="0" Mhz="8" hflip="1" vflip="1" labelx="0" valLabelx="0" eeprom="0" objectName="atmega32-5" y="-212" rotation="0" labely="-20" Auto_Load="false" id="atmega32-1" valLabely="0" Program="" Show_id="true" Logic_Symbol="false" x="-212" valLabRot="0"/>
+ 
+Hd44780-4: 
+<item rotation="0" y="-244" valLabelx="0" Cols="16" labelrot="0" Rows="2" objectName="Hd44780-4" Show_id="true" x="-396" labely="-82" hflip="1" id="Hd44780-2" valLabRot="0" vflip="1" itemtype="Hd44780" valLabely="0" labelx="70"/>
+ 
+KeyPad-3: 
+<item itemtype="KeyPad" Rows="4" labelrot="0" hflip="1" vflip="1" labelx="-16" Key_Labels="123456789*0#" valLabelx="0" objectName="KeyPad-3" y="-92" rotation="0" labely="-24" id="KeyPad-3" valLabely="0" Show_id="false" x="-364" Cols="3" valLabRot="0"/>
+ 
+Push-2: 
+<item itemtype="Push" Norm_Close="false" labelrot="0" hflip="1" vflip="1" labelx="-16" valLabelx="0" objectName="Push-2" y="-60" rotation="0" labely="-24" Key="" Poles="1" id="Push-6" valLabely="0" Show_id="false" x="-84" valLabRot="0"/>
+ 
+Ground-1: 
+<item rotation="0" y="-20" valLabelx="0" labelrot="0" objectName="Ground-1" Show_id="false" x="-52" labely="8" hflip="1" id="Ground-7" valLabRot="0" vflip="1" itemtype="Ground" valLabely="0" labelx="-16"/>
+ 
+Connector-6: 
+<item itemtype="Connector" endpinid="Ground-1-Gnd" startpinid="Push-2-switch0pinN" labelrot="0" hflip="1" vflip="1" labelx="-16" valLabelx="0" objectName="Connector-6" y="-60" rotation="0" labely="-24" id="Connector-8" valLabely="0" Show_id="false" x="-68" pointList="-68,-60,-52,-60,-52,-36" enodeid="Circ_eNode-7" valLabRot="0"/>
+ 
+PlotterWidget-8: 
+<item mouseTracking="false" contextMenuPolicy="1" visible="false" itemtype="Plotter" Scale="1" accessibleName="" childrenRect="" isActiveWindow="true" modal="false" windowOpacity="1" windowFilePath="" windowIconText="" sizePolicy="" maximized="false" sizeHint="" Tracks="1" rect="" childrenRegion="" pos="" palette="" fullScreen="false" minimized="false" width="200" statusTip="" geometry="" updatesEnabled="true" frameGeometry="" minimumSizeHint="" enabled="true" frameSize="" baseSize="" windowModality="0" minimumSize="" layoutDirection="0" maximumSize="" x="0" minimumWidth="200" normalGeometry="" focusPolicy="0" objectName="PlotterWidget-8" y="0" focus="false" toolTip="" maximumHeight="200" inputMethodHints="0" toolTipDuration="-1" accessibleDescription="" locale="" windowModified="false" font="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" autoFillBackground="false" size="" acceptDrops="false" whatsThis="" windowTitle="" MinVolt="-500" maximumWidth="1000" sizeIncrement="" minimumHeight="200" windowIcon="" styleSheet="" MaxVolt="500" cursor="" height="200"/>
+ 
+</circuit>
